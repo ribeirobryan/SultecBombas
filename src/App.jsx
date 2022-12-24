@@ -1,14 +1,19 @@
-import css from './App.css'
-import Main from './components/burgerMenu.jsx'
+import './App.scss'
+import BurgerMenu from './components/BurgerMenu.jsx'
 
 export default function App() {
 
   return (
-    <header className='topBar'>
-      <div className='uncollapsedMenu'>
+    <div className="wrapper">
+      <header className='topBar'>
         <img src="src\assets\logoSultec.png" alt="Sultecbombas Logo" />
-        <Main />
-      </div>
-    </header>
+        <BurgerMenu />
+      </header>
+      <main className='main'>
+        <div className='productDisplay'><img src="src\assets\logoSultec.png" alt="" /></div>
+        <div className='productDisplay'><img src="src\assets\logoSultec.png" alt="" /></div>
+        <div className='productDisplay'><img src="src\assets\logoSultec.png" alt="" /></div>
+      </main>
+    </div>
   )
 }

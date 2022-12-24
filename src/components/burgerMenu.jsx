@@ -1,16 +1,25 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
+import './BurgerMenu.scss'
+import { FaBars } from 'react-icons/fa'
 
-export default class burgerMenu extends Component {
+export default function BurgerMenu() {
 
-    render() {
-        return (
-            <>
-                <div className='sandwichSelector'>
-                    <span className='selector bar1'></span>
-                    <span className='selector bar2'></span>
-                    <span className='selector bar3'></span>
-                </div>
-                <nav className='sandwichMenu active'>
+    const [isActive, setIsActive] = useState(false);
+
+    function handleClick(){
+        setIsActive(isActive => !isActive)
+    
+    }
+
+    let isActiveCheck =  isActive ? null: 'deactive';
+
+    return (
+        <div className='burgerMenu'>
+            <button onClick={handleClick} className='menuBtn'>
+                <FaBars className='menuBars'/>
+            </button>
+            <div className={`optionWrapper ${isActiveCheck}`}>
+                <div className='menuOptions'>
                     <a href="#">
                         <p>Produtos</p>
                     </a>
@@ -23,8 +32,8 @@ export default class burgerMenu extends Component {
                     <a href="#">
                         <p>Downloads</p>
                     </a>
-                </nav>
-            </>
-        )
-    }
+                </div>
+            </div>
+        </div>
+    ) 
 }

@@ -36,7 +36,11 @@ a:visited{
 .deactive{
   display: none;
 }
-.main{
+main {
+  display: flex;
+  flex-direction: column;
+}
+.imgWrapper{
   display:flex;
   flex: 1;
   width: 100%;
@@ -45,22 +49,10 @@ a:visited{
   scroll-snap-type:inline mandatory;
   background: $bgColor2;
 }
-.main > * {
+.imgWrapper > * {
   scroll-snap-align: center;
 }
-.productDisplay{
+.buttons{
   display: flex;
-  width: 90%;
-  min-width: 90%;
-  height: 90%;
-  background:$bgColor1;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid $mainColor;
-  border-radius: 20px;
-  margin: 10px 10px;
-}
-.productDisplay img {
-  width: 74%;
-  max-height: 100%;
+  justify-content: space-evenly;
 }

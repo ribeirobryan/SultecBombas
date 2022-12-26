@@ -1,5 +1,6 @@
 import './App.scss'
 import BurgerMenu from './components/BurgerMenu.jsx'
+import ImageSlider, { ButtonSlider } from './components/ImageSlider'
 
 export default function App() {
 
@@ -9,10 +10,13 @@ export default function App() {
         <img src="src\assets\logoSultec.png" alt="Sultecbombas Logo" />
         <BurgerMenu />
       </header>
-      <main className='main'>
-        <div className='productDisplay'><img src="src\assets\logoSultec.png" alt="" /></div>
-        <div className='productDisplay'><img src="src\assets\logoSultec.png" alt="" /></div>
-        <div className='productDisplay'><img src="src\assets\logoSultec.png" alt="" /></div>
+      <main>
+        <div className="imgWrapper">
+          <ImageSlider />
+        </div>
+        <div className="buttons">
+          <ButtonSlider />
+        </div>
       </main>
     </div>
   )

@@ -1,27 +1,58 @@
 @import '../assets/lib.scss';
 
-
+.imageSliderWrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.productDisplayWrapper{
+    display: flex;
+    flex: 1;
+    overflow: auto;
+    scroll-snap-type: inline proximity;
+    height: auto;
+}
+.productDisplayWrapper > * {
+    scroll-snap-align: center;
+}
+.productDisplayWrapper::-webkit-scrollbar{
+    display: none;
+}
 .productDisplay{
     display: flex;
     width: 90%;
     min-width: 90%;
     height: 90%;
-    background:$bgColor1;
+    background: $bgColor1;
     justify-content: center;
     align-items: center;
     border: 1px solid $mainColor;
     border-radius: 20px;
-    margin: 10px 10px;
+    margin: 10px;
 }
 .productDisplay img {
-    width: 74%;
-    max-height: 100%;
+    width: 70%;
+    max-height: 90%;
+}
+.selectButtons{
+    display: flex;
+    height: auto;
+    padding: 0 5px 0 5px;
+    opacity: 0.2;
+    gap: 10px;
 }
 .selectButton{
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
     border-radius: 100%;
+    position: absolute;
 }
-.selectButton:hover{
-    background-color: red;
+#forward{
+    right: 10px;
+    top: 150px;
+}
+#backwards{
+    left: 10px;
+    top: 150px;
 }

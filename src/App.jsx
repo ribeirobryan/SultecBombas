@@ -1,6 +1,6 @@
 import './App.scss'
 import BurgerMenu from './components/BurgerMenu.jsx'
-import ImageSlider, { ButtonSlider } from './components/ImageSlider'
+import ImageSlider from './components/ImageSlider'
 
 export default function App() {
 
@@ -11,12 +11,7 @@ export default function App() {
         <BurgerMenu />
       </header>
       <main>
-        <div className="imgWrapper">
-          <ImageSlider />
-        </div>
-        <div className="buttons">
-          <ButtonSlider />
-        </div>
+          <div className="imageWrapper"><ImageSlider/></div>
       </main>
     </div>
   )

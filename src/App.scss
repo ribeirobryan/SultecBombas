@@ -38,21 +38,13 @@ a:visited{
 }
 main {
   display: flex;
-  flex-direction: column;
+  width: 100vw;
+  height: auto;
 }
-.imgWrapper{
+.imageWrapper{
   display:flex;
-  flex: 1;
   width: 100%;
-  height: 300px;
-  overflow: auto;
-  scroll-snap-type:inline mandatory;
+  height: auto;
+  max-height: 500px;
   background: $bgColor2;
-}
-.imgWrapper > * {
-  scroll-snap-align: center;
-}
-.buttons{
-  display: flex;
-  justify-content: space-evenly;
 }

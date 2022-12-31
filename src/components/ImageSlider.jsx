@@ -1,5 +1,6 @@
 import './ImageSlider.scss'
-import {useRef, useEffect} from 'react'
+import {useRef} from 'react'
+import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
 
 
 export default function ImageSlider(e){
@@ -13,25 +14,25 @@ export default function ImageSlider(e){
 
     function HandleClick(e){
 
-        buttonValue = e.target.value
+        buttonValue = e.target.id
 
-        if (buttonValue === '>' && controlVar == 1) {
-            img2Ref.current.scrollIntoView({behavior:'smooth'})
+        if (buttonValue === 'forward' && controlVar == 1) {
+            img2Ref.current.scrollIntoView({behavior:'smooth', block:'nearest'})
             controlVar = 2
-        } else if (buttonValue === '>' && controlVar == 2) {
-            img3Ref.current.scrollIntoView({behavior:'smooth'})
+        } else if (buttonValue === 'forward' && controlVar == 2) {
+            img3Ref.current.scrollIntoView({behavior:'smooth', block:'nearest'})
             controlVar = 3
-        } else if (buttonValue === '>' && controlVar == 3){
-            img1Ref.current.scrollIntoView({behavior:'smooth'})
+        } else if (buttonValue === 'forward' && controlVar == 3){
+            img1Ref.current.scrollIntoView({behavior:'smooth', block:'nearest'})
             controlVar = 1
-        } else if (buttonValue === '<' && controlVar == 1){
-            img3Ref.current.scrollIntoView({behavior:'smooth'})
+        } else if (buttonValue === 'backwards' && controlVar == 1){
+            img3Ref.current.scrollIntoView({behavior:'smooth', block:'nearest'})
             controlVar = 3
-        } else if (buttonValue === '<' && controlVar == 2) {
-            img1Ref.current.scrollIntoView({behavior:'smooth'})
+        } else if (buttonValue === 'backwards' && controlVar == 2) {
+            img1Ref.current.scrollIntoView({behavior:'smooth', block:'nearest'})
             controlVar = 1
-        } else if (buttonValue === '<' && controlVar == 3){
-            img2Ref.current.scrollIntoView({behavior:'smooth'})
+        } else if (buttonValue === 'backwards' && controlVar == 3){
+            img2Ref.current.scrollIntoView({behavior:'smooth', block:'nearest'})
             controlVar = 2
         }
     }
@@ -39,15 +40,13 @@ export default function ImageSlider(e){
 
     return(
         <div className='imageSliderWrapper'>
+            <div className="selectButtons"><button onClick={HandleClick} className='selectButton' id='backwards'><FaAngleLeft className='buttonIcons'/></button></div>
             <div className='productDisplayWrapper'>
-                <div className='productDisplay' ref={img1Ref}><img src="src\assets\logoSultec.png" alt="" /></div>
-                <div className='productDisplay' ref={img2Ref}><img src="src\assets\logoSultec.png" alt="" /></div>
-                <div className='productDisplay' ref={img3Ref}><img src="src\assets\logoSultec.png" alt="" /></div>
+                <div className='productDisplay' ref={img1Ref}><p>AERADORES</p><img src="src\assets\aerador-petalas.png" alt="" /></div>
+                <div className='productDisplay' ref={img2Ref}><p>BOMBAS</p><img src="src\assets\bombas.webp" alt="" /></div>
+                <div className='productDisplay' ref={img3Ref}><p>ACOPLAMENTOS</p><img src="src\assets\acoplador.webp" alt="" /></div>
             </div>
-            <div className="selectButtons">
-                <input onClick={HandleClick} type='button' className='selectButton' value="<" id='backwards'></input>
-                <input onClick={HandleClick} type='button' className='selectButton' value=">" id='forward'></input>
-            </div>
+            <div className="selectButtons"><button onClick={HandleClick} className='selectButton' id='forward'><FaAngleRight className='buttonIcons'/></button></div>
         </div>
 )
 

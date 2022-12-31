@@ -1,4 +1,21 @@
+@font-face {
+    font-family: 'BebasNeue';
+    src: url(../src/assets/BebasNeue-Regular.ttf);
+  }
+
 $mainColor:hsl(200, 100%, 45%);
-$secColor: hsl(200, 100%, 40%);
+$secColor: hsl(200, 75%, 40%);
 $bgColor1: rgb(18, 18, 17);
 $bgColor2: rgb(25, 25, 22);
+
+$topBarHeight: 40px;
+
+
+*{
+    padding: 0;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'BebasNeue', system-ui;
+  }

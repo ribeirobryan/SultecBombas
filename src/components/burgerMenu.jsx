@@ -32,6 +32,9 @@ export default function BurgerMenu() {
                     <a href="#">
                         <p>Downloads</p>
                     </a>
+                    <a href="#">
+                        <p>Quem Somos</p>
+                    </a>
                 </div>
             </div>
         </div>
